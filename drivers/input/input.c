@@ -29,6 +29,8 @@
 #include <linux/rcupdate.h>
 #include "input-compat.h"
 
+#define CONFIG_INPUT_BOOSTER
+
 #if !defined(CONFIG_INPUT_BOOSTER) // Input Booster +
 #include <linux/input/input.h>
 #endif // Input Booster -
@@ -844,7 +846,9 @@ void input_event(struct input_dev *dev,
 		 unsigned int type, unsigned int code, int value)
 {
 	unsigned long flags;
+#if !defined(CONFIG_INPUT_BOOSTER) // Input Booster +
 	int idx;
+#endif  // Input Booster -
 
 	if (is_event_supported(type, dev->evbit, EV_MAX)) {
 
