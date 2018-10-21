@@ -1443,7 +1443,7 @@ int mdnie_probe(struct panel_device *panel, struct mdnie_tune *mdnie_tune)
 	mutex_lock(&mdnie->lock);
 	mdnie->props.enable = 0;
 	mdnie->props.scenario = UI_MODE;
-	mdnie->props.mode = AUTO;
+	mdnie->props.mode = NATURAL;
 	mdnie->props.tuning = 0;
 	mdnie->props.bypass = BYPASS_OFF;
 	mdnie->props.hdr = HDR_OFF;
