@@ -846,7 +846,7 @@ void input_event(struct input_dev *dev,
 		 unsigned int type, unsigned int code, int value)
 {
 	unsigned long flags;
-	int idx;
+	//int idx;
 
 	if (is_event_supported(type, dev->evbit, EV_MAX)) {
 
